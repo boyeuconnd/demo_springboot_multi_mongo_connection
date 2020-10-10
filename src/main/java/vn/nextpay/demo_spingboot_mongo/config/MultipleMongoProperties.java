@@ -45,11 +45,7 @@ public class MultipleMongoProperties {
         return new MongoTemplate(secondMongodbFactory(),converter);
     }
 
-//    @Bean
-//    public MongoTemplate secondaryMongoTemplate(@Qualifier("secondaryMongodbFactory") MongoDatabaseFactory dbftr){
-//        MappingMongoConverter converter = mappingMongoConverter(secondaryMongodbFactory());
-//        return new MongoTemplate(dbftr,converter);
-//    }
+
     @Bean
     public MappingMongoConverter secondaryMappingMongoConverter(@Qualifier("firstMongodbFactory")  MongoDatabaseFactory mongoDbFactory) {
         MappingMongoConverter converter = new MappingMongoConverter(

@@ -42,5 +42,18 @@ public class AccountController {
         return accountService.deteleOne(id);
     }
 
+    @PostMapping("/recover/{id}")
+    public Account recoverArchive(@PathVariable ObjectId id){
+        return accountService.recoverArchive(id);
+    }
 
+    @GetMapping("/archived")
+    public List<Account> showArchived(){
+        return accountService.showArchived();
+    }
+
+    @PostMapping("/archive/{id}")
+    public Account archiveAccount(@PathVariable ObjectId id){
+        return accountService.archiveAccount(id);
+    }
 }

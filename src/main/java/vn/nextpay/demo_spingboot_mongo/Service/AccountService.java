@@ -17,4 +17,10 @@ public interface AccountService {
     Account updateOne (Account account,ObjectId id);
 
     Account deteleOne (ObjectId id);
+
+    Account recoverArchive (ObjectId id);
+
+    Account archiveAccount (ObjectId id);
+
+    List<Account> showArchived();
 }
